@@ -21,7 +21,7 @@ var models= {
 function App() {
     var [html, setHtml] = React.useState(code);
     var [iframeContent, setIframeContent] = React.useState('');
-    var [autoUpdate, setAutoUpdate] = React.useState(true);
+    var [autoUpdate, setAutoUpdate] = React.useState(false);
     var [currentFile, setCurrentFile] = React.useState('index.html');
     return (
         <div className="App">
