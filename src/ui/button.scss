@@ -1,0 +1,28 @@
+@import './colors';
+button.button {
+    background: $color-grey;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 $color-accent;
+    transition: box-shadow 200ms, padding 200ms, margin 200ms, background-color 200ms;
+    font-family:var(--font-family);
+    user-select: none;
+
+    &:hover {
+        background: $color-grey-light;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 1px $color-accent;
+        padding: 9px;
+        margin: 6px;
+    }
+
+    &:active {
+        box-shadow: 0 0 0 3px $color-accent;
+        padding: 9px;
+        margin: 6px;
+    }
+}

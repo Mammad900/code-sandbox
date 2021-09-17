@@ -1,0 +1,62 @@
+@import './colors';
+.checkbox {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    * {
+        vertical-align: middle;
+    }
+    label {
+        position: relative;
+        top: -2px;
+    }
+    input[type="checkbox"] {
+        appearance: none;
+        --background: #{$color-grey};
+        background-color: var(--background);
+        height: 20px;
+        width: 20px;
+        position: relative;
+
+        cursor: pointer;
+        transition: box-shadow 200ms, background-color 200ms;
+        font-family:var(--font-family);
+        user-select: none;
+        box-shadow: 0 0 0 0 $color-accent;
+
+        &:hover {
+            --background: #{$color-grey-light};
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 2px $color-accent;
+        }
+
+        &:active,
+        &:checked:active {
+            --background: #{$color-accent-light};
+            background: var(--background);
+            box-shadow: 0 0 0 2px $color-accent-light !important;
+        }
+
+        &:checked {
+            background: $color-accent;
+            &:focus {
+                box-shadow: 0 0 0 2px $color-accent-light !important;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid var(--background);
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+            transition: all 200ms;
+        }
+    }
+}
